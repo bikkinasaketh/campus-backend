@@ -9,14 +9,18 @@ const userSchema = new mongoose.Schema(
     },
     firstName: String,
     lastName: String,
-    email: { type: String, unique: true },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     phoneNumber: String,
     userId: String,
     department: String,
-    password: String,
-    email: { type: String, required: true },
-  password: String,
-  accountType: String,
+    password: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
